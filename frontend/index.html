@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sentiment Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Sentiment Analyzer</h1>
+            <p>Analyze the sentiment of any text using machine learning</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea 
+                    id="textInput" 
+                    placeholder="Enter your text here to analyze sentiment...
+Try something like: 'I absolutely love this product!' or 'This is terrible'"
+                    rows="6"
+                ></textarea>
+                
+                <div class="button-group">
+                    <button id="analyzeBtn" class="btn btn-primary">
+                        Analyze Sentiment
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <div id="results" class="results-section" style="display: none;">
+                <h2>Analysis Results</h2>
+                
+                <div class="result-card">
+                    <div class="sentiment-display">
+                        <span class="label">Sentiment:</span>
+                        <span id="sentiment" class="sentiment-badge"></span>
+                    </div>
+                    
+                    <div class="confidence-display">
+                        <span class="label">Confidence:</span>
+                        <div class="progress-bar">
+                            <div id="confidenceBar" class="progress-fill"></div>
+                        </div>
+                        <span id="confidenceText" class="confidence-value"></span>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="metric-label">Polarity:</span>
+                            <span id="polarity" class="metric-value"></span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Subjectivity:</span>
+                            <span id="subjectivity" class="metric-value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cleaned-text">
+                    <h3>Processed Text:</h3>
+                    <p id="cleanedText"></p>
+                </div>
+            </div>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing sentiment...</p>
+            </div>
+
+            <div id="error" class="error-message" style="display: none;"></div>
+        </main>
+
+        <section class="examples">
+            <h3>Try These Examples:</h3>
+            <div class="example-chips">
+                <button class="chip" data-text="This product is absolutely amazing! I love it so much!">Positive Example</button>
+                <button class="chip" data-text="This is the worst experience ever. Very disappointed.">Negative Example</button>
+                <button class="chip" data-text="It's okay, nothing special really.">Neutral Example</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built with Flask, Python, and Machine Learning</p>
+            <p>© 2025 Rakesh Reddy Ravula</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
